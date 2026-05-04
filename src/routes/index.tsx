@@ -1,26 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/bingi/Header";
+import { Hero } from "@/components/bingi/Hero";
+import { Stats } from "@/components/bingi/Stats";
+import { Ecosystem } from "@/components/bingi/Ecosystem";
+import { KeyFeatures } from "@/components/bingi/KeyFeatures";
+import { CTA } from "@/components/bingi/CTA";
+import { Footer } from "@/components/bingi/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="bg-page-ambient min-h-screen">
+      <Header />
+      <Hero />
+      <Stats />
+      <Ecosystem />
+      <KeyFeatures />
+      <CTA />
+      <Footer />
+    </main>
+  );
 }
