@@ -4,6 +4,7 @@ import { Hero } from "@/components/bingi/Hero";
 import { Stats } from "@/components/bingi/Stats";
 import { Ecosystem } from "@/components/bingi/Ecosystem";
 import { KeyFeatures } from "@/components/bingi/KeyFeatures";
+import { BuiltForEveryone } from "@/components/bingi/BuiltForEveryone";
 import { CTA } from "@/components/bingi/CTA";
 import { Footer } from "@/components/bingi/Footer";
 
@@ -19,6 +20,7 @@ function Index() {
       <Stats />
       <Ecosystem />
       <KeyFeatures />
+      <BuiltForEveryone />
       <CTA />
       <Footer />
     </main>
