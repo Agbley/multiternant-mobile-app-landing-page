@@ -10,9 +10,12 @@ const nav = [
 
 export function Header() {
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
+    <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <Link to="/" className="flex items-baseline gap-0.5">
+        <Link
+          to="/"
+          className="flex items-baseline gap-0.5 rounded-full border border-border/60 bg-card/60 px-5 py-2 backdrop-blur-md"
+        >
           <span className="text-2xl font-extrabold tracking-tight text-primary">Bingi</span>
           <span className="text-2xl font-extrabold text-primary">.</span>
         </Link>
@@ -31,7 +34,7 @@ export function Header() {
 
         <a
           href="#download"
-          className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-105"
+          className="rounded-full border border-primary/40 bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow backdrop-blur-md transition-transform hover:scale-105"
         >
           Download App
         </a>
