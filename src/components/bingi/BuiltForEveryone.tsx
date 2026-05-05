@@ -46,16 +46,10 @@ export function BuiltForEveryone() {
   const data = content[active];
 
   return (
-    <section className="relative py-24">
+    <section className="relative pb-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <span className="pill-tag">For Everyone</span>
-          <h2 className="mt-6 text-4xl font-extrabold tracking-tight md:text-5xl">
-            <span className="text-gradient-light">{data.title}</span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">{data.subtitle}</p>
-
-          <div className="mt-8 inline-flex flex-wrap justify-center gap-2 rounded-full border border-border bg-card/50 p-1.5 backdrop-blur">
+          <div className="inline-flex flex-wrap justify-center gap-2 rounded-full border border-border bg-card/50 p-1.5 backdrop-blur">
             {roles.map((r) => (
               <button
                 key={r}
