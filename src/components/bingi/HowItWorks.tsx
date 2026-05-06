@@ -1,24 +1,8 @@
 import { useState } from "react";
-import { Search, CalendarCheck, Car, Star } from "lucide-react";
 import phoneDashboard from "@/assets/phone-dashboard.png";
 
 const tabs = ["Customer", "Provider"] as const;
 type Tab = (typeof tabs)[number];
-
-const steps: Record<Tab, { icon: any; title: string; desc: string }[]> = {
-  Customer: [
-    { icon: Search, title: "Discover", desc: "Search verified cars, stays, and drivers across Africa in seconds." },
-    { icon: CalendarCheck, title: "Book", desc: "Reserve instantly with transparent pricing and secure payments." },
-    { icon: Car, title: "Travel", desc: "Enjoy a smooth, verified experience backed by 24/7 support." },
-    { icon: Star, title: "Review", desc: "Rate your experience to help the Bingi community grow stronger." },
-  ],
-  Provider: [
-    { icon: Search, title: "List", desc: "Create your listing for a car, property, or driver service in minutes." },
-    { icon: CalendarCheck, title: "Get Booked", desc: "Receive verified bookings with built-in identity checks." },
-    { icon: Car, title: "Deliver", desc: "Provide the service and let Bingi handle payments and logistics." },
-    { icon: Star, title: "Earn", desc: "Get paid securely with transparent commissions and fast payouts." },
-  ],
-};
 
 const journey: Record<Tab, { title: string; desc: string }[]> = {
   Customer: [
@@ -35,7 +19,6 @@ const journey: Record<Tab, { title: string; desc: string }[]> = {
 
 export function HowItWorks() {
   const [active, setActive] = useState<Tab>("Customer");
-  const data = steps[active];
 
   return (
     <section className="py-24">
@@ -65,27 +48,6 @@ export function HowItWorks() {
               {t}
             </button>
           ))}
-        </div>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {data.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <div
-                key={s.title}
-                className="relative rounded-3xl border border-border/60 bg-card/60 p-6 text-left shadow-card-dark backdrop-blur-md"
-              >
-                <div className="absolute right-5 top-5 text-5xl font-black text-primary/15">
-                  0{i + 1}
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15 text-primary">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 text-lg font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-              </div>
-            );
-          })}
         </div>
 
         <div className="mt-20 grid items-center gap-12 text-left md:grid-cols-2">
