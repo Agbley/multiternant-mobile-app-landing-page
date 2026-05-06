@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ShieldCheck, LayoutGrid, CalendarDays, Receipt } from "lucide-react";
 import phonesVerify from "@/assets/phones-verify.png";
 import phoneDashboard from "@/assets/phone-dashboard.png";
@@ -7,48 +7,71 @@ import phonesCalendar from "@/assets/phones-calendar.png";
 const roles = ["Customer", "Car Owner", "Property Host", "Driver"] as const;
 type Role = (typeof roles)[number];
 
-const content: Record<Role, { title: string; subtitle: string; cards: { icon: any; title: string; desc: string; image: string; alt: string }[] }> = {
+type CardData = { icon: any; title: string; desc: string; image: string; alt: string };
+
+const content: Record<Role, { cards: [CardData, CardData]; calendarTitle: string; calendarDesc: string; commissionTitle: string; commissionDesc: string }> = {
   Customer: {
-    title: "Built for Everyone",
-    subtitle: "Whether you're traveling, earning, or hosting — BINGI gives you the tools to do it seamlessly.",
     cards: [
       { icon: ShieldCheck, title: "Verified network for trust", desc: "Identity verification and background checks for peace of mind.", image: phonesVerify, alt: "Verification screens" },
       { icon: LayoutGrid, title: "Powerful customer dashboard", desc: "Centralized control for bookings, trips, and saved listings.", image: phoneDashboard, alt: "Customer dashboard" },
     ],
+    calendarTitle: "Plan trips with confidence",
+    calendarDesc: "Browse availability across cars, stays, and rides in one calendar view.",
+    commissionTitle: "Transparent pricing",
+    commissionDesc: "See every fee upfront — no hidden charges at checkout.",
   },
   "Car Owner": {
-    title: "Built for Everyone",
-    subtitle: "Whether you're traveling, earning, or hosting — BINGI gives you the tools to do it seamlessly.",
     cards: [
       { icon: ShieldCheck, title: "Verified renter system", desc: "Identity verification and background checks before every rental.", image: phonesVerify, alt: "Verification screens" },
       { icon: LayoutGrid, title: "Powerful fleet dashboard", desc: "Manage listings, earnings, and bookings in one place.", image: phoneDashboard, alt: "Fleet dashboard" },
     ],
+    calendarTitle: "Availability & rental control",
+    calendarDesc: "Block dates, manage handovers, and avoid double bookings effortlessly.",
+    commissionTitle: "Transparent commission structure",
+    commissionDesc: "Know exactly what you earn per rental with no hidden fees.",
   },
   "Property Host": {
-    title: "Built for Everyone",
-    subtitle: "Whether you're traveling, earning, or hosting — BINGI gives you the tools to do it seamlessly.",
     cards: [
       { icon: ShieldCheck, title: "Verified host system for trust", desc: "Built-in identity verification and background checks for peace of mind.", image: phonesVerify, alt: "Host verification" },
       { icon: LayoutGrid, title: "Powerful property dashboard", desc: "Centralized control for multiple properties, analytics, and revenue tracking.", image: phoneDashboard, alt: "Property dashboard" },
     ],
+    calendarTitle: "Calendar & booking control",
+    calendarDesc: "Your funds are held securely and only released after a successful stay.",
+    commissionTitle: "Transparent commission structure",
+    commissionDesc: "Know exactly what you earn with no hidden fees or complex payout cycles.",
   },
   Driver: {
-    title: "Built for Everyone",
-    subtitle: "Whether you're traveling, earning, or hosting — BINGI gives you the tools to do it seamlessly.",
     cards: [
       { icon: ShieldCheck, title: "Verified driver system", desc: "Background checks and identity verification to build rider trust.", image: phonesVerify, alt: "Driver verification" },
       { icon: LayoutGrid, title: "Powerful earnings dashboard", desc: "Track trips, earnings, and ratings — all in one place.", image: phoneDashboard, alt: "Driver dashboard" },
     ],
+    calendarTitle: "Schedule & shift control",
+    calendarDesc: "Set your hours and accept rides on your own terms.",
+    commissionTitle: "Transparent earnings breakdown",
+    commissionDesc: "See your fare, commission, and take-home for every trip.",
   },
 };
 
 export function BuiltForEveryone() {
   const [active, setActive] = useState<Role>("Property Host");
+  const [paused, setPaused] = useState(false);
   const data = content[active];
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setActive((cur) => roles[(roles.indexOf(cur) + 1) % roles.length]);
+    }, 4000);
+    return () => clearInterval(id);
+  }, [paused]);
 
   return (
     <section className="relative pb-24">
-      <div className="mx-auto max-w-6xl px-6">
+      <div
+        className="mx-auto max-w-6xl px-6"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <div className="text-center">
           <div className="inline-flex flex-wrap justify-center gap-2 rounded-full border border-border bg-card/50 p-1.5 backdrop-blur">
             {roles.map((r) => (
@@ -111,10 +134,8 @@ export function BuiltForEveryone() {
                 <CalendarDays className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold">Calendar &amp; booking control</h3>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Your funds are held securely and only released to providers after your successful trip.
-                </p>
+                <h3 className="text-lg font-semibold">{data.calendarTitle}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{data.calendarDesc}</p>
               </div>
             </div>
           </article>
@@ -158,10 +179,8 @@ export function BuiltForEveryone() {
                 <Receipt className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold">Transparent commission structure</h3>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Know exactly what you earn with no hidden fees or complex payout cycles.
-                </p>
+                <h3 className="text-lg font-semibold">{data.commissionTitle}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{data.commissionDesc}</p>
               </div>
             </div>
           </article>
