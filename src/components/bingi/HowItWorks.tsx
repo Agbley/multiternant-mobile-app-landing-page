@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Search, CalendarCheck, Car, Star } from "lucide-react";
+import phoneDashboard from "@/assets/phone-dashboard.png";
 
 const tabs = ["Customer", "Provider"] as const;
 type Tab = (typeof tabs)[number];
@@ -16,6 +17,19 @@ const steps: Record<Tab, { icon: any; title: string; desc: string }[]> = {
     { icon: CalendarCheck, title: "Get Booked", desc: "Receive verified bookings with built-in identity checks." },
     { icon: Car, title: "Deliver", desc: "Provide the service and let Bingi handle payments and logistics." },
     { icon: Star, title: "Earn", desc: "Get paid securely with transparent commissions and fast payouts." },
+  ],
+};
+
+const journey: Record<Tab, { title: string; desc: string }[]> = {
+  Customer: [
+    { title: "Search", desc: "Find cars, stays, or drivers based on your location and specific needs. Filter by luxury grade, availability, and verified ratings." },
+    { title: "Book", desc: "Choose verified options and confirm your booking with ease. Our transparent pricing ensures no hidden fees, ever." },
+    { title: "Travel Safely", desc: "Enjoy secure and reliable services with verified providers. Real-time tracking and 24/7 concierge support are at your fingertips." },
+  ],
+  Provider: [
+    { title: "List", desc: "Create your listing for a car, property, or driver service in minutes with our guided onboarding." },
+    { title: "Get Booked", desc: "Receive verified bookings backed by built-in identity checks and secure payments." },
+    { title: "Earn Safely", desc: "Deliver the service and get paid securely with transparent commissions and fast payouts." },
   ],
 };
 
@@ -72,6 +86,31 @@ export function HowItWorks() {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-20 grid items-center gap-12 text-left md:grid-cols-2">
+          <ol className="space-y-10">
+            {journey[active].map((s, i) => (
+              <li key={s.title} className="flex gap-5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-primary/40 text-lg font-bold text-primary">
+                  {i + 1}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">{s.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{s.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div className="relative flex justify-center md:justify-end">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,oklch(0.62_0.235_25/0.18),transparent_70%)]" />
+            <img
+              src={phoneDashboard}
+              alt="Bingi app preview"
+              loading="lazy"
+              className="relative h-[520px] object-contain"
+            />
+          </div>
         </div>
       </div>
     </section>
