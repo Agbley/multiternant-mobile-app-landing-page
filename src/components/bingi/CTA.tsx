@@ -1,3 +1,4 @@
+import { Apple, Play } from "lucide-react";
 import phone from "@/assets/phone-dashboard.png";
 
 export function CTA() {
@@ -18,14 +19,14 @@ export function CTA() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="#" className="flex items-center gap-3 rounded-2xl bg-foreground px-5 py-3 text-background transition-transform hover:scale-105">
-                <span className="text-2xl"></span>
+                <Apple className="h-7 w-7" />
                 <div className="text-left leading-tight">
                   <div className="text-[10px] opacity-70">Download on the</div>
                   <div className="text-sm font-semibold">App Store</div>
                 </div>
               </a>
               <a href="#" className="flex items-center gap-3 rounded-2xl bg-primary px-5 py-3 text-primary-foreground shadow-glow transition-transform hover:scale-105">
-                <span className="text-xl"></span>
+                <Play className="h-7 w-7 fill-primary-foreground" />
                 <div className="text-left leading-tight">
                   <div className="text-[10px] opacity-80">Get it on</div>
                   <div className="text-sm font-semibold">Play Store</div>
