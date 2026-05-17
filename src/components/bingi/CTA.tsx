@@ -1,21 +1,23 @@
 import { Apple, Play } from "lucide-react";
+import phone from "@/assets/phone-dashboard.png";
 
 export function CTA() {
   return (
-    <section id="download" className="py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/20 via-card to-card p-12 text-center md:p-16">
-          <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-primary/30 blur-3xl" />
-          <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
-          <div className="relative">
-            <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl">
-              <span className="text-gradient-light">Your journey starts with </span>
-              <span className="text-primary">Bingi</span>
+    <section id="download" className="relative overflow-hidden py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="relative grid items-center gap-12 md:grid-cols-2">
+          <div>
+            <span className="pill-tag">Get the App</span>
+            <h2 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
+              <span className="text-gradient-light">Start Your Journey with </span>
+              <span className="text-primary">BINGI</span>
+              <span className="text-gradient-light"> Today</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-              Download the app today and join thousands of travelers exploring Africa the smart way.
+            <p className="mt-6 max-w-xl text-muted-foreground">
+              Book cars, stays, and verified drivers — all in one secure app. Manage bookings,
+              track earnings, and travel with confidence.
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
               <a href="#" className="flex items-center gap-3 rounded-2xl bg-foreground px-5 py-3 text-background transition-transform hover:scale-105">
                 <Apple className="h-7 w-7" />
                 <div className="text-left leading-tight">
@@ -31,6 +33,15 @@ export function CTA() {
                 </div>
               </a>
             </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -right-10 -top-10 h-72 w-72 rounded-full bg-primary/30 blur-3xl" />
+            <img
+              src={phone}
+              alt="Bingi app preview"
+              className="relative mx-auto w-full max-w-md rotate-6 drop-shadow-[0_30px_60px_rgba(220,40,40,0.35)]"
+            />
           </div>
         </div>
       </div>
