@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import phoneDashboard from "@/assets/phone-dashboard.png";
 
 const tabs = ["Customer", "Provider"] as const;
@@ -19,10 +19,23 @@ const journey: Record<Tab, { title: string; desc: string }[]> = {
 
 export function HowItWorks() {
   const [active, setActive] = useState<Tab>("Customer");
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setActive((cur) => (cur === "Customer" ? "Provider" : "Customer"));
+    }, 4000);
+    return () => clearInterval(id);
+  }, [paused]);
 
   return (
     <section className="py-24">
-      <div className="mx-auto max-w-6xl px-6 text-center">
+      <div
+        className="mx-auto max-w-6xl px-6 text-center"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <span className="pill-tag">How Bingi Works</span>
         <h2 className="mt-6 text-4xl font-extrabold tracking-tight md:text-6xl">
           <span className="text-gradient-light">Simple, Safe, and</span>
