@@ -6,6 +6,7 @@ import { Ecosystem } from "@/components/bingi/Ecosystem";
 import { KeyFeatures } from "@/components/bingi/KeyFeatures";
 import { BuiltForEveryone } from "@/components/bingi/BuiltForEveryone";
 import { HowItWorks } from "@/components/bingi/HowItWorks";
+import { TrustSafety } from "@/components/bingi/TrustSafety";
 import { CTA } from "@/components/bingi/CTA";
 import { Footer } from "@/components/bingi/Footer";
 
@@ -23,6 +24,7 @@ function Index() {
       <KeyFeatures />
       <BuiltForEveryone />
       <HowItWorks />
+      <TrustSafety />
       <CTA />
       <Footer />
     </main>
