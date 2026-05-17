@@ -1,4 +1,4 @@
-import { CalendarX, CalendarCheck, CheckCircle2 } from "lucide-react";
+import { CalendarX, CalendarCheck, CheckCircle2, ShieldCheck, ShieldAlert } from "lucide-react";
 
 const policies = [
   {
@@ -21,6 +21,32 @@ const policies = [
       "Strict adherence to booking timelines and location drop-off points.",
     ],
   },
+  {
+    icon: ShieldCheck,
+    title: "Verified Users Only",
+    desc: "Rigorous identity checks to ensure safety for our entire community.",
+    bullets: [
+      "Mandatory government-issued ID verification for all accounts.",
+      "Comprehensive background checks for all drivers and on-site staff.",
+      "Continuous validation of documentation for property hosts and owners.",
+    ],
+  },
+  {
+    icon: ShieldAlert,
+    title: "Platform Integrity",
+    desc: "Institutional rules that protect all users and financial transactions.",
+    bullets: [
+      "Strict prohibition of off-platform transactions to ensure insurance coverage.",
+      "Respect mutual agreements and platform service-level standards.",
+      "Immediate suspension for violations of trust or safety protocols.",
+    ],
+  },
+];
+
+const trustBadges = [
+  "Verified Drivers & Hosts",
+  "Transparent Booking Rules",
+  "Secure Record-Based Transactions",
 ];
 
 export function TrustSafety() {
@@ -68,6 +94,15 @@ export function TrustSafety() {
               >
                 Read Full Policy
               </a>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+          {trustBadges.map((b) => (
+            <div key={b} className="flex items-center gap-3 text-primary">
+              <CheckCircle2 className="h-5 w-5" />
+              <span className="text-sm font-semibold">{b}</span>
             </div>
           ))}
         </div>
