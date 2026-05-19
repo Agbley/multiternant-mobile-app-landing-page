@@ -9,6 +9,7 @@ import { HowItWorks } from "@/components/bingi/HowItWorks";
 import { TrustSafety } from "@/components/bingi/TrustSafety";
 import { CTA } from "@/components/bingi/CTA";
 import { FAQs } from "@/components/bingi/FAQs";
+import { Contact } from "@/components/bingi/Contact";
 import { Footer } from "@/components/bingi/Footer";
 
 export const Route = createFileRoute("/")({
@@ -28,6 +29,7 @@ function Index() {
       <TrustSafety />
       <CTA />
       <FAQs />
+      <Contact />
       <Footer />
     </main>
   );
