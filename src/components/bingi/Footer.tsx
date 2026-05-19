@@ -1,19 +1,52 @@
+import { Mail, Phone, MapPin } from "lucide-react";
+
 export function Footer() {
   return (
-    <footer id="contact" className="border-t border-border py-12">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
-        <div className="flex items-baseline gap-0.5">
-          <span className="text-2xl font-extrabold text-primary">Bingi</span>
-          <span className="text-2xl font-extrabold text-primary">.</span>
+    <footer className="relative pt-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-12 md:grid-cols-3">
+          <div>
+            <div className="flex items-baseline gap-0.5">
+              <span className="text-3xl font-extrabold text-primary">Bingi</span>
+              <span className="text-3xl font-extrabold text-primary">.</span>
+            </div>
+            <p className="mt-6 max-w-xs text-sm text-muted-foreground">
+              BINGI is Africa&apos;s integrated travel ecosystem connecting cars, stays, and professional drivers in one trusted platform
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-primary">Menu</h4>
+            <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
+              <li><a href="#features" className="hover:text-foreground">Features</a></li>
+              <li><a href="#how" className="hover:text-foreground">How it Works</a></li>
+              <li><a href="#policies" className="hover:text-foreground">Policies</a></li>
+              <li><a href="#faqs" className="hover:text-foreground">FAQs</a></li>
+              <li><a href="#contact" className="hover:text-foreground">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-primary">Contact</h4>
+            <ul className="mt-6 space-y-5 text-sm">
+              <li>
+                <div className="flex items-center gap-2 text-muted-foreground"><Mail className="h-4 w-4" /> Email</div>
+                <div className="mt-1 font-medium">bingi@email.com</div>
+              </li>
+              <li>
+                <div className="flex items-center gap-2 text-muted-foreground"><Phone className="h-4 w-4" /> Phone</div>
+                <div className="mt-1 font-medium">(+233) 2000 0000</div>
+              </li>
+              <li>
+                <div className="flex items-center gap-2 text-muted-foreground"><MapPin className="h-4 w-4 text-primary" /> Accra, Ghana</div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-          <a href="#features" className="hover:text-foreground">Features</a>
-          <a href="#how" className="hover:text-foreground">How It Works</a>
-          <a href="#policies" className="hover:text-foreground">Policies</a>
-          <a href="#faqs" className="hover:text-foreground">FAQs</a>
-          <a href="#contact" className="hover:text-foreground">Contact Us</a>
-        </nav>
-        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Bingi. All rights reserved.</p>
+
+        <div className="mt-16 border-t border-border py-8 text-center">
+          <p className="text-xs text-muted-foreground">©{new Date().getFullYear()} Bingi LTD. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );
