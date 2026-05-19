@@ -11,24 +11,20 @@ const faqs = [
     a: "Browse available cars in your area, select your dates, and confirm the booking through the BINGI app. You'll get instant confirmation and pickup details.",
   },
   {
-    q: "Is my payment secure?",
-    a: "Yes. All transactions are processed securely through our platform with encrypted payment gateways and full record-keeping for your protection.",
-  },
-  {
-    q: "What if I need to cancel my booking?",
-    a: "You can cancel through the app. Refund eligibility follows our flexible cancellation policy based on how close to the trip you cancel.",
-  },
-  {
-    q: "How are drivers and hosts verified?",
+    q: "How are drivers verified?",
     a: "Every driver and host goes through ID verification, background checks, and documentation validation before being approved on BINGI.",
   },
   {
-    q: "Can I list my own car or service?",
-    a: "Absolutely. Sign up as a host or driver, complete verification, and start earning by sharing your vehicle or services with verified travelers.",
+    q: "How does overtime work?",
+    a: "If your trip runs beyond the booked time, overtime charges apply automatically based on the host's hourly rate. You'll be notified in-app before extra fees accrue.",
   },
   {
-    q: "What support is available if something goes wrong?",
-    a: "Our 24/7 support team is available in-app to help resolve any issue — from booking changes to on-trip emergencies.",
+    q: "Is payment made in the app?",
+    a: "Yes. All payments are processed securely inside the BINGI app — no cash, no off-platform transfers. This protects both travelers and hosts.",
+  },
+  {
+    q: "How do earnings work?",
+    a: "Hosts and drivers earn from every completed booking. Earnings are tracked in your dashboard and paid out on a regular schedule to your linked account.",
   },
 ];
 
