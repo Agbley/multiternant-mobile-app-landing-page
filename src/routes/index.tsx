@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/bingi/Header";
 import { Hero } from "@/components/bingi/Hero";
 import { Stats } from "@/components/bingi/Stats";
+import { About } from "@/components/bingi/About";
 import { Ecosystem } from "@/components/bingi/Ecosystem";
 import { KeyFeatures } from "@/components/bingi/KeyFeatures";
 import { BuiltForEveryone } from "@/components/bingi/BuiltForEveryone";
@@ -22,6 +23,7 @@ function Index() {
       <Header />
       <Hero />
       <Stats />
+      <About />
       <Ecosystem />
       <KeyFeatures />
       <BuiltForEveryone />
