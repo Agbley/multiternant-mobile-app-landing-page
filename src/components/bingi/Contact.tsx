@@ -1,6 +1,4 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 export function Contact() {
   return (
@@ -48,28 +46,20 @@ export function Contact() {
             </div>
           </div>
 
-          <form className="rounded-3xl border border-border bg-card/40 p-8 backdrop-blur-sm shadow-card-dark">
-            <div className="space-y-5">
-              <div>
-                <label className="mb-2 block text-sm font-medium">First Name</label>
-                <Input placeholder="Enter first name" className="h-12 rounded-xl bg-secondary/60 border-border" />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm font-medium">Email</label>
-                <Input type="email" placeholder="Enter your email" className="h-12 rounded-xl bg-secondary/60 border-border" />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm font-medium">How can we help you?</label>
-                <Textarea placeholder="Enter your message" rows={5} className="rounded-xl bg-secondary/60 border-border" />
-              </div>
-              <button
-                type="submit"
-                className="w-full rounded-xl bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02]"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
+          <div className="flex flex-col items-center justify-center rounded-3xl border border-border bg-card/40 p-10 text-center backdrop-blur-sm shadow-card-dark">
+            <h3 className="text-2xl font-bold">Let&apos;s start a conversation</h3>
+            <p className="mt-3 max-w-sm text-sm text-muted-foreground">
+              Fill out our quick form and our team will get back to you shortly.
+            </p>
+            <a
+              href="https://forms.gle/DTXoougqiJqLbxFT8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02]"
+            >
+              Get in Touch
+            </a>
+          </div>
         </div>
       </div>
     </section>
