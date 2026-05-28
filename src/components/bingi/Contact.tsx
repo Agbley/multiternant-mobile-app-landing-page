@@ -22,7 +22,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground">Email</div>
-                  <div className="font-semibold">bingi@email.com</div>
+                  <div className="font-semibold"> Info@bingiplatform.com / eben@bingiplatform.com </div>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -31,7 +31,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground">Phone</div>
-                  <div className="font-semibold">+ 235 000 000 000</div>
+                  <div className="font-semibold"> +233 24 392 7807 / +233 24 775 4642 </div>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -40,7 +40,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground">Office</div>
-                  <div className="font-semibold">N&apos;Djamena, Chad</div>
+                  <div className="font-semibold">East Legon, Greater Accra, Ghana </div>
                 </div>
               </div>
             </div>
